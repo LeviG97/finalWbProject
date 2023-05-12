@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>Book Finder</h1>
+  
+    <form>
+      <div class ="form-group">
+        <input type="text" name="movie-name2" class="from-control" #moviename placeholder="Enter movie name">
+      </div>
+      <button (click)="getMovieDetails(moviename.value)" type="submit" class="btn btn-primary mt-2">Get Movie Details</button>
+    </form>
+  
+    <div class="row bg-light mt-r p-4" *ngIf="movieData">
+      <div class="col-sm-4">
+        <div>
+          <h3>{{movieData.Error}}</h3>
+        </div>
+        <div *ngIf="movieData.Title">
+          <img src="{{movieData.Poster}}">
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <div *ngIf="movieData">
+        <h1>{{movieData.Title}}</h1>
+        <h2>Director:{{movieData.Director}}</h2>
+      </div>
+    </div>
+  </div>
+  
