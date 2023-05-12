@@ -21,4 +21,8 @@ export class BookApiService {
       catchError(this.handleError)
     );
   }
+  private handleError(err:HttpErrorResponse){
+    console.log('OmdbApiService:' + err.message);
+    return throwError(() => new Error("OmdbApiService:" + err.message))
+  }
 }
