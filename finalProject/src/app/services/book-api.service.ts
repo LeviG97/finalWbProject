@@ -9,8 +9,8 @@ import { IOMDBResponse } from '../bookResponse';
 })
 export class BookApiService {
 
-  private _siteURL="https://www.omdapi.com"
-  private _key="?i=tt3896198&apikey=b6a4a20a"
+  private _siteURL="https://www.omdbapi.com/"
+  private _key="?apikey=b6a4a20a&t="
   constructor(private _http:HttpClient) { }
 
   getMovieData(movieName:string):Observable<IOMDBResponse>{
